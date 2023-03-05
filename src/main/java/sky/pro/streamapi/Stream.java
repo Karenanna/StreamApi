@@ -23,12 +23,22 @@ public class Stream<T> {
     public static <T> void findMaxMin(Stream<? extends T> stream, Comparator<? super T> order,
                                       BiConsumer<? super T, ? super T>
                                               maxMinConsumer) {
-        List<? extends T> list = stream.sorted(order).toList();
+        List<? extends T> list = stream.sorted(order).toList;
 
-        maxMinConsumer.accept(list.get(0), list.get(list.size()-1));
+        maxMinConsumer.accept(list.get(0), list.get(list.size() - 1));
 
     }
 
-    private static void findMaxMin(java.util.stream.Stream<Integer> stream, Object o, Object o1) {
+        private static void findMaxMin(java.util.stream.Stream<Integer> stream, Object o, Object o1) {
+
+    }
+
+    public static void findNumber(List<Integer> list) {
+        System.out.println();
+        System.out.println(list.stream().filter(x -> x % 2 == 0).count() + "из" + list.size() + "четные");
+
+
+
+
     }
 }
